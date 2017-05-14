@@ -65,15 +65,16 @@ class FollowAllSpider(scrapy.Spider):
             ).strip(),
         }
         '''
-        items = self.crawler.stats.get_value('item_scraped_count', 0)
-        pages = self.crawler.stats.get_value('response_received_count', 0)
         
-        f=open("AvSpeed.txt",'w')
-        f.write("{0}".format(items*2))
         page = self._get_item(response)
         r = [page]
         #print(r)
         r.extend(self._extract_requests(response))
+        items = self.crawler.stats.get_value('item_scraped_count', 0)
+        pages = self.crawler.stats.get_value('response_received_count', 0)
+        
+        f=open("AvSpeed.txt",'w')
+        f.write("{0}".format(items*3))
         return r
 
         

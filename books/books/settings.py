@@ -5,7 +5,7 @@ NEWSPIDER_MODULE = 'books.spiders'
 
 # some sane limits by default (override if needed)
 #CLOSESPIDER_PAGECOUNT = 1000
-CLOSESPIDER_TIMEOUT = 30
+CLOSESPIDER_TIMEOUT = 20
 
 RETRY_ENABLED = False
 COOKIES_ENABLED = False
