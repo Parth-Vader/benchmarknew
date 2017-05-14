@@ -8,3 +8,7 @@ class Page(scrapy.Item):
     referer = scrapy.Field()
     newcookies = scrapy.Field()
     body = scrapy.Field()
+    rating = scrapy.Field()
+    price = scrapy.Field()
+    category = scrapy.Field()
+    stock = scrapy.Field()

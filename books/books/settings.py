@@ -4,8 +4,8 @@ SPIDER_MODULES = ['books.spiders']
 NEWSPIDER_MODULE = 'books.spiders'
 
 # some sane limits by default (override if needed)
-#CLOSESPIDER_PAGECOUNT = 1000
-CLOSESPIDER_TIMEOUT = 20
+CLOSESPIDER_ITEMCOUNT = 1000
+#CLOSESPIDER_TIMEOUT = 20
 
 RETRY_ENABLED = False
 COOKIES_ENABLED = False

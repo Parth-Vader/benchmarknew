@@ -2,7 +2,8 @@
 # -*- coding: utf-8 -*-   
 import re
 from six.moves.urllib.parse import urlparse
-
+#from datetime import datetime
+import datetime
 import scrapy
 from scrapy.http import Request, HtmlResponse
 from scrapy.linkextractors import LinkExtractor
@@ -48,52 +49,36 @@ class FollowAllSpider(scrapy.Spider):
         @returns items 1 1
         @returns requests 1
         @scrapes url title foo
-        """
-        '''
-        rating = response.css('p.star-rating::attr(class)').extract_first().split(' ')[-1]
-        yield {
-            'rating': self.ratings_map.get(rating.lower(), ''),
-            'title': response.css('.product_main h1::text').extract_first(),
-           
-            'stock': int(
-                ''.join(
-                    response.css('.product_main .instock.availability ::text').re('(\d+)')
-                )
-            ),
-            'category': ''.join(
-                response.css('ul.breadcrumb li:nth-last-child(2) ::text').extract()
-            ).strip(),
-        }
-        '''
-        
+        """        
         page = self._get_item(response)
         r = [page]
-        #print(r)
+        
         r.extend(self._extract_requests(response))
         items = self.crawler.stats.get_value('item_scraped_count', 0)
         pages = self.crawler.stats.get_value('response_received_count', 0)
+        a = self.crawler.stats.get_value('start_time')
+        b = datetime.datetime.now()
+        c = b - datetime.timedelta(0,19800) # Done because my machine a time zone problem
         
+        timesec = c-a
         f=open("AvSpeed.txt",'w')
-        f.write("{0}".format(items*3))
+        f.write("{0}".format(items * (60/timesec.total_seconds())))
         return r
-
-        
 
     def _get_item(self, response):
         item = Page(
             url=response.url,
             size=str(len(response.body)),
             referer=response.request.headers.get('Referer'),
+        
+	        rating = response.css('p.star-rating::attr(class)').extract_first().split(' ')[-1],
+	        title = response.css('.product_main h1::text').extract_first(),
+	        price = response.css('.product_main p.price_color::text').re_first('£(.*)'),
+	        stock = ''.join(response.css('.product_main .instock.availability ::text').re('(\d+)')),
+	        category = ''.join(response.css('ul.breadcrumb li:nth-last-child(2) ::text').extract()).strip(),
         )
-        rating = response.css('p.star-rating::attr(class)').extract_first().split(' ')[-1]
-        title = response.css('.product_main h1::text').extract_first()
-        price = response.css('.product_main p.price_color::text').re_first('£(.*)')
-        stock = ''.join(response.css('.product_main .instock.availability ::text').re('(\d+)'))
-        category = ''.join(response.css('ul.breadcrumb li:nth-last-child(2) ::text').extract()).strip()
         
-        self._set_title(item, response)
         self._set_new_cookies(item, response)
-        
         return item
 
         
@@ -103,12 +88,6 @@ class FollowAllSpider(scrapy.Spider):
             links = self.link_extractor.extract_links(response)
             r.extend(Request(x.url, callback=self.parse) for x in links)
         return r
-
-    def _set_title(self, page, response):
-        if isinstance(response, HtmlResponse):
-            title = response.xpath("//title/text()").extract()
-            if title:
-                page['title'] = title[0]
 
     def _set_new_cookies(self, page, response):
         cookies = []
