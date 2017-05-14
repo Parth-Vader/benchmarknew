@@ -44,3 +44,24 @@ Multiplying this by `3`, the statistics are :
 ## Making ITEMCOUNT = 1000
 
 Here, I made `CLOSESPIDER_ITEMCOUNT = 1000` and calculated the exact time that the spider ran. By taking `ITEMCOUNT` and dividing it by the time taken, I obtain the average speed.
+
+Statistics : 
+
+### Per-minute estimate
+
+	Population size:50
+
+	Mean (μ): 3654.34
+	Median: 3681.5
+	Mode: No
+	Lowest value: 3104
+	Highest value: 4008
+	Range: 904
+	Interquartile range: 294.5
+	First quartile: 3558.75
+	Third quartile: 3853.25
+	Variance (σ2): 54810.584400001
+	Standard deviation (σ): 234.11660428086
+	Quartile deviation: 147.25
+	Mean absolute deviation (MAD): 187.9392
+

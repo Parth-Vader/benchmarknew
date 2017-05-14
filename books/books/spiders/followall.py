@@ -62,7 +62,7 @@ class FollowAllSpider(scrapy.Spider):
         
         timesec = c-a
         f=open("AvSpeed.txt",'w')
-        f.write("{0}".format(items * (60/timesec.total_seconds())))
+        f.write("{0}".format(int(items * (60/timesec.total_seconds()))))
         return r
 
     def _get_item(self, response):
