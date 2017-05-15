@@ -65,3 +65,38 @@ Statistics :
 	Quartile deviation: 147.25
 	Mean absolute deviation (MAD): 187.9392
 
+Another set
+
+	Population size:50
+
+	Mean (μ): 3830.74
+	Median: 3891
+	Mode: 3884
+	Lowest value: 3151
+	Highest value: 4082
+	Range: 931
+	Interquartile range: 232.5
+	First quartile: 3710
+	Third quartile: 3942.5
+	Variance (σ2): 31212.5924
+	Standard deviation (σ): 176.67085894397
+	Quartile deviation: 116.25
+	Mean absolute deviation (MAD): 137.9432
+
+## Per Second data statistics 
+
+	Population size:50
+
+	Mean (μ): 64.72
+	Median: 65
+	Mode: 65
+	Lowest value: 58
+	Highest value: 68
+	Range: 10
+	Interquartile range: 2
+	First quartile: 64
+	Third quartile: 66
+	Variance (σ2): 3.2815999999997
+	Standard deviation (σ): 1.8115186998758
+	Quartile deviation: 1
+	Mean absolute deviation (MAD): 1.2032
