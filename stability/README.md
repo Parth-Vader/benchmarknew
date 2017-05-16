@@ -100,3 +100,34 @@ Another set
 	Standard deviation (σ): 1.8115186998758
 	Quartile deviation: 1
 	Mean absolute deviation (MAD): 1.2032
+
+
+Changed settings to 
+
+	CLOSESPIDER_ITEMCOUNT = 1000
+	RETRY_ENABLED = False
+	COOKIES_ENABLED = False
+	LOGSTATS_INTERVAL = 3
+	LOG_LEVEL = 'INFO'
+	MEMDEBUG_ENABLED = True
+	CONCURRENT_REQUESTS = 100
+
+Per second statistics :
+
+	Population size:50
+
+	Mean (μ): 63.88
+	Median: 64
+	Mode: 65
+	Lowest value: 59
+	Highest value: 65
+	Range: 6
+	Interquartile range: 2
+	First quartile: 63
+	Third quartile: 65
+	Variance (σ2): 1.9456
+	Standard deviation (σ): 1.394847661933
+	Quartile deviation: 1
+	Mean absolute deviation (MAD): 1.0576
+
+One of the best results so far.

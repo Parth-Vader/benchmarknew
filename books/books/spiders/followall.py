@@ -32,12 +32,6 @@ class FollowAllSpider(scrapy.Spider):
         self.link_extractor = LinkExtractor()
         self.cookies_seen = set()
 
-    default_settings = {
-        'LOG_LEVEL': 'INFO',
-        'LOGSTATS_INTERVAL': 1,
-        'CLOSESPIDER_TIMEOUT': 10,
-	}    
-
     def start_requests(self):
         return [Request(self.url, callback=self.parse, dont_filter=True)]
 
@@ -58,7 +52,7 @@ class FollowAllSpider(scrapy.Spider):
         pages = self.crawler.stats.get_value('response_received_count', 0)
         a = self.crawler.stats.get_value('start_time')
         b = datetime.datetime.now()
-        c = b - datetime.timedelta(0,19800) # Done because my machine a time zone problem
+        c = b - datetime.timedelta(0,19800) # Done because my machine has a time zone problem
         
         timesec = c-a
         f=open("AvSpeed.txt",'w')
@@ -70,8 +64,7 @@ class FollowAllSpider(scrapy.Spider):
             url=response.url,
             size=str(len(response.body)),
             referer=response.request.headers.get('Referer'),
-        
-	        rating = response.css('p.star-rating::attr(class)').extract_first().split(' ')[-1],
+            rating = response.css('p.star-rating::attr(class)').extract_first().split(' ')[-1],
 	        title = response.css('.product_main h1::text').extract_first(),
 	        price = response.css('.product_main p.price_color::text').re_first('£(.*)'),
 	        stock = ''.join(response.css('.product_main .instock.availability ::text').re('(\d+)')),
