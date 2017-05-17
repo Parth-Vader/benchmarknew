@@ -132,7 +132,10 @@ Per second statistics :
 
 One of the best results so far.
 
-Discarding first 300 items :
+The speed of the spider varies as follows :
+
+
+### Discarding first 300 items :
 
 
 	Population size:20
