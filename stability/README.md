@@ -131,3 +131,22 @@ Per second statistics :
 	Mean absolute deviation (MAD): 1.0576
 
 One of the best results so far.
+
+Discarding first 300 items :
+
+
+	Population size:20
+
+	Mean (μ): 38.4301944725
+	Median: 37.6511886284
+	Mode: No
+	Lowest value: 35.147985388
+	Highest value: 46.2829296263
+	Range: 11.1349442383
+	Interquartile range: 3.249650584025
+	First quartile: 35.94529021805
+	Third quartile: 39.194940802075
+	Variance (σ2): 10.478846228199
+	Standard deviation (σ): 3.237104605693
+	Quartile deviation: 1.6248252920125
+	Mean absolute deviation (MAD): 2.35329736993

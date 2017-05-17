@@ -2,7 +2,6 @@
 # -*- coding: utf-8 -*-   
 import re
 from six.moves.urllib.parse import urlparse
-#from datetime import datetime
 import datetime
 import scrapy
 from scrapy.http import Request, HtmlResponse
@@ -31,7 +30,8 @@ class FollowAllSpider(scrapy.Spider):
         self.allowed_domains = [re.sub(r'^www\.', '', urlparse(url).hostname)]
         self.link_extractor = LinkExtractor()
         self.cookies_seen = set()
-
+        self.previtem = 0
+        self.n = datetime.datetime.now()
     def start_requests(self):
         return [Request(self.url, callback=self.parse, dont_filter=True)]
 
@@ -53,10 +53,17 @@ class FollowAllSpider(scrapy.Spider):
         a = self.crawler.stats.get_value('start_time')
         b = datetime.datetime.now()
         c = b - datetime.timedelta(0,19800) # Done because my machine has a time zone problem
-        
+        #newitem = items - self.previtem
+        #self.previtem = items
+        #print(newitem)
         timesec = c-a
         f=open("AvSpeed.txt",'w')
-        f.write("{0}".format(int(items * (1/timesec.total_seconds()))))
+        if items == 300:
+        	self.n = datetime.datetime.now()
+        if items > 300:
+        	items = items - 300
+        	c = c - self.n
+        f.write("\n{0}".format((items * (1/timesec.total_seconds()))))
         return r
 
     def _get_item(self, response):
