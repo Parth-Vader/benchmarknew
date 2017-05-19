@@ -177,6 +177,10 @@ When CONCURRENT_REQUESTS = 100 :
 	Quartile deviation: 2.4506402723125
 	Mean absolute deviation (MAD): 2.898659479338
 
+Histogram : 
+
+![Histogram](https://raw.githubusercontent.com/Parth-Vader/benchmarknew/master/stability/Page-Shot-2017-5-19%20Histogram%20Maker%20%C2%B7%20Plotly%20Online%20Chart%20Editor.png?token=APhACN1g6il9tOz1iImwk2ZHTiigI9bZks5ZJ9xkwA%3D%3D)
+
 When CONCURRENT_REQUESTS = 120 :
 
 	
