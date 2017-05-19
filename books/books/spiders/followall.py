@@ -8,7 +8,7 @@ from scrapy.http import Request, HtmlResponse
 from scrapy.linkextractors import LinkExtractor
 
 from books.items import Page
-
+fix = datetime.datetime.now()
 
 class FollowAllSpider(scrapy.Spider):
 
@@ -56,13 +56,25 @@ class FollowAllSpider(scrapy.Spider):
         #newitem = items - self.previtem
         #self.previtem = items
         #print(newitem)
+        #fix = c
         timesec = c-a
         f=open("AvSpeed.txt",'w')
-        if items == 300:
-        	self.n = datetime.datetime.now()
+        if 280 <= items <= 300:
+        	t = datetime.datetime.now()
+        	global fix 
+        	fix = t - datetime.timedelta(0,19800)
+        	#print("here")
+        	#print(fix)
         if items > 300:
         	items = items - 300
-        	c = c - self.n
+        	timesec = c - fix
+        	'''print(items)
+        	print(a)
+        	print(b)
+        	print(c) 
+        	print("  ")
+        	print(fix)
+        	'''
         f.write("\n{0}".format((items * (1/timesec.total_seconds()))))
         return r
 

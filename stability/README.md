@@ -136,20 +136,58 @@ The speed of the spider varies as follows :
 
 
 ### Discarding first 300 items :
+	
+When CONCURRENT_REQUESTS = 10 :
 
+	Population size:50
+
+	Mean (μ): 57.914509901472
+	Median: 57.49577374755
+	Mode: No
+	Lowest value: 48.3399842982
+	Highest value: 66.6062245625
+	Range: 18.2662402643
+	Interquartile range: 7.20653028805
+	First quartile: 54.612051058325
+	Third quartile: 61.818581346375
+	Variance (σ2): 18.473481862359
+	Standard deviation (σ): 4.2980788571592
+	Quartile deviation: 3.603265144025
+	Mean absolute deviation (MAD): 3.6365766199846
+
+When CONCURRENT_REQUESTS = 100 :
 
 	Population size:20
 
-	Mean (μ): 38.4301944725
-	Median: 37.6511886284
+	Mean (μ): 58.068316935185
+	Median: 58.89404859485
 	Mode: No
-	Lowest value: 35.147985388
-	Highest value: 46.2829296263
-	Range: 11.1349442383
-	Interquartile range: 3.249650584025
-	First quartile: 35.94529021805
-	Third quartile: 39.194940802075
-	Variance (σ2): 10.478846228199
-	Standard deviation (σ): 3.237104605693
-	Quartile deviation: 1.6248252920125
-	Mean absolute deviation (MAD): 2.35329736993
+	Lowest value: 50.2820789954
+	Highest value: 66.6083017011
+	Range: 16.3262227057
+	Interquartile range: 4.901280544625
+	First quartile: 55.180792304725
+	Third quartile: 60.08207284935
+	Variance (σ2): 13.726370736525
+	Standard deviation (σ): 3.7049117042819
+	Quartile deviation: 2.4506402723125
+	Mean absolute deviation (MAD): 2.898659479338
+
+When CONCURRENT_REQUESTS = 120 :
+
+	
+	Population size:20
+
+	Mean (μ): 64.629335444995
+	Median: 65.1046648778
+	Mode: No
+	Lowest value: 58.6573798789
+	Highest value: 67.5569293799
+	Range: 8.899549501
+	Interquartile range: 2.640101009925
+	First quartile: 63.9208027457
+	Third quartile: 66.560903755625
+	Variance (σ2): 5.91760829821
+	Standard deviation (σ): 2.4326134707779
+	Quartile deviation: 1.3200505049625
+	Mean absolute deviation (MAD): 1.849888751116
