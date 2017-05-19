@@ -132,9 +132,13 @@ Per second statistics :
 
 One of the best results so far.
 
-The speed of the spider varies as follows :
+## The speed of the spider varies as follows :
 
+![Spider 1](https://raw.githubusercontent.com/Parth-Vader/benchmarknew/master/stability/Page-Shot-2017-5-17%20Online%20Graph%20Maker%20%C2%B7%20Plotly(1).png?token=APhACHm3y1vw0l7QEmUcyWkbuWbydBJoks5ZJXoRwA%3D%3D)
+![Spider 2](https://raw.githubusercontent.com/Parth-Vader/benchmarknew/master/stability/Page-Shot-2017-5-17%20Online%20Graph%20Maker%20%C2%B7%20Plotly.png?token=APhACMS4wmXftozNxlzluo9Dkm8hvuv_ks5ZJXoUwA%3D%3D)
+![Spider 3](https://raw.githubusercontent.com/Parth-Vader/benchmarknew/master/stability/Screenshot-2017-5-17%20Online%20Graph%20Maker%20%C2%B7%20Plotly.png?token=APhACP8kfEr5K7ZXxC9Ri5v6pzUJLQsVks5ZJXoXwA%3D%3D)
 
+We can observe that the speed stabilises after around 300 items, so I would now be discarding the first 300 items.
 ### Discarding first 300 items :
 	
 When CONCURRENT_REQUESTS = 10 :
@@ -191,3 +195,4 @@ When CONCURRENT_REQUESTS = 120 :
 	Standard deviation (σ): 2.4326134707779
 	Quartile deviation: 1.3200505049625
 	Mean absolute deviation (MAD): 1.849888751116
+
