@@ -58,7 +58,9 @@ class FollowAllSpider(scrapy.Spider):
         #print(newitem)
         #fix = c
         timesec = c-a
-        f=open("AvSpeed.txt",'w')
+        name = "Avspeed" + str(a) + ".txt"
+        f=open(name,'w')
+        
         if 280 <= items <= 300:
         	t = datetime.datetime.now()
         	global fix 
@@ -67,14 +69,8 @@ class FollowAllSpider(scrapy.Spider):
         	#print(fix)
         if items > 300:
         	items = items - 300
-        	timesec = c - fix
-        	'''print(items)
-        	print(a)
-        	print(b)
-        	print(c) 
-        	print("  ")
-        	print(fix)
-        	'''
+        	timesec = c - fix        	
+        
         f.write("\n{0}".format((items * (1/timesec.total_seconds()))))
         return r
 
